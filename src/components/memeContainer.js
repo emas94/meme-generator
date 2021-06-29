@@ -15,10 +15,11 @@ const MemeContainer = () => {
                 background: m.url.length > 10 ? `url(${m.url}) center no-repeat` : "rgba(70, 83, 98, 0.7)",
                 backgroundSize: "cover",
               }}
+              key={m.id}
             >
               <Remove onClick={() => dispatch({ type: "removeMeme", id: m.id })}>X</Remove>
               <TextContent style={{ top: m.top ? `${m.top.y}px` : `20px`, left: m.top !== 0 ? `${m.top.x}px` : `auto` }}>{m.title}</TextContent>
-              <TextContent style={{ bottom: m.bottom ? `${m.bottom.y}px` : `20px`, left: m.bottom !== 0 ? `${m.bottom.x}px` : `auto` }}>{m.description}</TextContent>
+              <TextContent style={{ bottom: m.bottom ? `${m.bottom.y}px` : `20px`, left: m.bottom.x !== 0 ? `${m.bottom.x}px` : `auto` }}>{m.description}</TextContent>
             </Meme>
           )
         }) : <p style={{ textAlign: 'center', fontSize: 20, fontWeight: 600 }}>Loading...</p>}

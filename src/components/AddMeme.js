@@ -10,11 +10,11 @@ const AddMeme = ({ onSubmit }) => {
   const [isDraggingBottom, setIsDraggingBottom] = useState(false)
   const [translateTop, setTranslateTop] = useState({
     x: 0,
-    y: 0
+    y: 10
   });
   const [translateBottom, setTranslateBottom] = useState({
     x: 0,
-    y: 0
+    y: 10
   });
 
   const handleDragMoveTop = (e) => {
@@ -52,7 +52,7 @@ const AddMeme = ({ onSubmit }) => {
 
           >
             <DragMove onDragMove={handleDragMoveTop} style={{
-              transform: `translateX(${translateTop.x}px) translateY(${translateTop.y}px)`,
+              transform: `translateX(${translateTop.x}px) translateY(${translateTop.y}px)`, left: 0, top: 0,
             }}>
 
               <TextContent style={{
@@ -62,9 +62,9 @@ const AddMeme = ({ onSubmit }) => {
                 {title}</TextContent>
             </DragMove>
             <DragMove onDragMove={handleDragMoveBottom} style={{
-              transform: `translateX(${translateBottom.x}px) translateY(${translateBottom.y}px)`,
+              transform: `translateX(${translateBottom.x}px) translateY(${translateBottom.y}px)`, position: 'absolute', left: 0, bottom: 0,
             }} >
-              <TextContent position="bottom: 20px" style={{
+              <TextContent position="bottom: 0" style={{
                 border: isDraggingBottom ? "2px dashed black" : '0'
               }}>{description}</TextContent>
             </DragMove>
@@ -151,7 +151,7 @@ width: auto;
 font-weight: 600;
 font-size: 24px;
 padding: 10px 20px;
-${props => props.position ? props.position : null}
+${props => props.position ? props.position : null};
 cursor: grab;
 `
 
