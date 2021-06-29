@@ -86,7 +86,7 @@ const AddMeme = ({ onSubmit }) => {
 
 
           <label
-            style={{ margin: 10, marginLeft: 0 }}>Title</label>
+            style={{ margin: 10, marginLeft: 0 }}>Top </label>
           <input
             value={title}
             onChange={(e) => {
@@ -94,7 +94,7 @@ const AddMeme = ({ onSubmit }) => {
             }}
           />
           <label
-            style={{ margin: 10, marginLeft: 0 }}>Description</label>
+            style={{ margin: 10, marginLeft: 0 }}>Bottom</label>
           <input
             value={description}
             onChange={(e) => {
